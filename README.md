@@ -19,9 +19,9 @@ This project makes use of:
 
 For compatibility reasons with `dokku-elasticsearch`, deployed versions are:
 
-- ElasticSearch: 2.4.6
-- Kibana: 4.6.6
-- LogTrail: 4.x-0.1.14
+- ElasticSearch: 7.2.0
+- Kibana: 7.2.0
+- LogTrail: 7.2.0-0.1.31
 
 
 # Setup
@@ -46,7 +46,7 @@ The following Dokku plugins need to be installed:
 
 ```
     export ELASTICSEARCH_IMAGE="elasticsearch"
-    export ELASTICSEARCH_IMAGE_VERSION="2.4.6"
+    export ELASTICSEARCH_IMAGE_VERSION="7.2.0"
     dokku elasticsearch:create logstash
     dokku elasticsearch:link logstash kibana
 ```
