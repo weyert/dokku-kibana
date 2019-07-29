@@ -48,6 +48,21 @@ The following Dokku plugins need to be installed:
     export ELASTICSEARCH_IMAGE="elasticsearch"
     export ELASTICSEARCH_IMAGE_VERSION="7.2.0"
     dokku elasticsearch:create logstash
+```
+
+3. Correct elasticsearch plugin defaults
+
+Edit `/var/lib/dokku/services/elasticsearch/logstash/config/elasticsearch.yml` and add the following lines, note that `logstash` in the path would differ if you chose a different name.
+
+```
+node.name: node-1
+cluster.initial_master_nodes:
+  - node-1
+```
+
+4. Link elasticsearch to the app
+
+```
     dokku elasticsearch:link logstash kibana
 ```
 
